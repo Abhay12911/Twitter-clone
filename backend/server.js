@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
-import postRoutes from "./routes/auth.routes.js";
+import postRoutes from "./routes/auth.routes.js"; 
+import notificationRoutes from "./routes/notification.route.js"
 
 import connectMongoDB from "./db/connectMongoDB.js";
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true })); // to parse form data(urlencode
 app.use("/api/auth", authRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 app.listen(PORT,()=>{
     console.log(`sever is runnig on ${PORT}`);
